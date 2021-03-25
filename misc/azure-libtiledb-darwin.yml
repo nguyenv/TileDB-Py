@@ -52,6 +52,9 @@ steps:
 
     cmake --build . --config Release -j3
     cmake --build . --target install-tiledb --config Release
+  env:
+    GIT_AUTHOR_EMAIL: "test@tiledb.com"
+    GIT_AUTHOR_NAME: "test"
   condition: and(eq(variables['Agent.OS'], 'Windows_NT'),  ne(variables.LIBTILEDB_CACHE_RESTORED, 'true'))
   displayName: "Bld libtiledb (Windows)"
 
