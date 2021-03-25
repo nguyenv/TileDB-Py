@@ -44,8 +44,8 @@ steps:
     git clone https://github.com/TileDB-Inc/TileDB $(TILEDB_SRC)
     git -C $(TILEDB_SRC) checkout $(LIBTILEDB_SHA)
 
-    git config user.email "test@tiledb.com"
-    git config user.name "test"
+    git -C $(TILEDB_SRC) config user.email "test@tiledb.com"
+    git -C $(TILEDB_SRC) config user.name "test"
 
     mkdir $(TILEDB_INSTALL)
     cd $(TILEDB_BUILD)
