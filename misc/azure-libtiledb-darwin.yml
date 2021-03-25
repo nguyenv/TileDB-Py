@@ -44,6 +44,9 @@ steps:
     git clone https://github.com/TileDB-Inc/TileDB $(TILEDB_SRC)
     git -C $(TILEDB_SRC) checkout $(LIBTILEDB_SHA)
 
+    git config user.email "test@tiledb.com"
+    git config user.name "test"
+
     mkdir $(TILEDB_INSTALL)
     cd $(TILEDB_BUILD)
     :: use cmake directly because the powershell arg/quoting rules are bonkers
@@ -52,9 +55,6 @@ steps:
 
     cmake --build . --config Release -j3
     cmake --build . --target install-tiledb --config Release
-  env:
-    GIT_AUTHOR_EMAIL: "test@tiledb.com"
-    GIT_AUTHOR_NAME: "test"
   condition: and(eq(variables['Agent.OS'], 'Windows_NT'),  ne(variables.LIBTILEDB_CACHE_RESTORED, 'true'))
   displayName: "Bld libtiledb (Windows)"
 
