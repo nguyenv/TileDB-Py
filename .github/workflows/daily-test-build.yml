@@ -49,7 +49,7 @@ jobs:
       run: echo "::set-output name=date::$(date +'%m-%d-%Y')"
   
     - name: Create new branch for PR
-      uses: peterjgrainger/action-create-branch@v2
+      uses: peterjgrainger/action-create-branch@v2.0.1
       if: failure()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
