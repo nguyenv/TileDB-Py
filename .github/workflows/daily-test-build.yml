@@ -52,7 +52,6 @@ jobs:
       uses: peter-evans/create-pull-request@v3
       if: failure()
       with:
-        token: ${{ secrets.PAT }}
         commit-message: Update report
         signoff: false
         branch: example-patches
