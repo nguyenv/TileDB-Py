@@ -13,7 +13,7 @@ jobs:
     env:
       TILEDB_VERSION: dev
 
-    # steps:
+    steps:
     # - name: Set up Python
     #   uses: actions/setup-python@v2
 
