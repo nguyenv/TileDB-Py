@@ -50,7 +50,7 @@ jobs:
     
     - name: Create PR if failed
       uses: peter-evans/create-pull-request@v3
-      # if: failure()
+      if: failure()
       # with:
       #   title: '[TEST] Failed Nightly Build for ${{ steps.date.outputs.date }}'
       #   body: |
